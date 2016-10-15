@@ -1,0 +1,31 @@
+<div class='app' ng-if='vm.showControls'>
+  <div class='app_inner'>
+    <input type='text' placeholder='Enter your destination' ng-model='vm.location'></input>
+    <button ng-click='vm.getLocation()'>Search</button>
+  </div>
+</div>
+
+<aside>
+  <div ng-if='showResults'>
+    <h4>Incident Results <span class='accidents'>{{vm.incidents.estimatedTotal}}</span></h4>
+    <h4>Description
+    <p>{{vm.chosenOne.title}}</p>
+    <p ng-if='!vm.chosenOne.title'>No marker selected</p></h4>
+
+    <h4>Reason
+    <p>{{vm.chosenOne.reason}}</p>
+    <p ng-if='!vm.chosenOne.reason'>No marker selected</p></h4>
+
+    <h4>Severity
+    <p>{{vm.chosenOne.severity}}</p>
+    <p ng-if='!vm.chosenOne.severity'>No marker selected</p></h4>
+  </div>
+  <div ng-if='!showResults'>
+    <div class='center'>
+      <span>
+        <i class='material-icons'>map</i>
+        <p>Choose a destination</p>
+      </span>
+    </div>
+  </div>
+</aside>

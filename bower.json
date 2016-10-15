@@ -1,0 +1,24 @@
+{
+  "name": "incident-tracker",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Jack Thomson"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Jackthomsonn/incident-tracker",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "angular-resource": "^1.5.8",
+    "jquery": "^3.1.1"
+  }
+}

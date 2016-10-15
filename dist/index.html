@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app" ng-strict-di ng-cloak>
+  <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Meta Content -->
+    <meta content='width=device-width, initial-scale=1, user-scalable=no' name='viewport'>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+    <meta content='black' name='apple-mobile-web-app-status-bar-style'>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyDKze-BRn0aDXlbuIrPYRCP93NzFtN20e4"></script>
+    <script src="assets/vendors/gmaps.js"></script>
+  </head>
+  <body>
+    <header>
+      <h3>Incident Tracker</h3>
+      <i class='material-icons' ng-click='showControls()'>search</i>
+    </header>
+    <div class='loader' ng-if='loading'></div>
+    <error-dialogue></error-dialogue>
+    <div class='map'></div>
+    <ui-view></ui-view>
+    <script src="assets/vendors/angular.js"></script>
+    <script src="assets/vendors/angular-ui-router.js"></script>
+    <script src="assets/vendors/angular-resource.js"></script>
+    <script src="assets/vendors/jquery.js"></script>
+    <script src="client/app/app.js"></script>
+  </body>
+</html>
