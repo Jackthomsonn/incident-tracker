@@ -2,7 +2,5 @@
 
 (function() {
   angular
-    .module('app.components', [
-      'app.error'
-    ])
+    .module('app.components', [])
 })()

@@ -14,5 +14,6 @@
       controller: 'IncidentTrackerController',
       controllerAs: 'vm'
     })
+    $urlRouterProvider.otherwise('/');
   }
 })()

@@ -1,33 +1,26 @@
 'use strict';
+
 (function() {
   angular
     .module('app.core')
     .factory('responseInterceptor', responseInterceptor)
-    .config(httpProviderConfig);
+    .config(httpProviderConfig)
 
-  responseInterceptor.$inject = ['$q', '$rootScope', '$injector', 'ErrorService'];
+  responseInterceptor.$inject = ['$q', '$rootScope', '$injector', 'ErrorService']
   function responseInterceptor($q, $rootScope, $injector, ErrorService){
     return {
       responseError: function(response) {
-        if(response.status === 401) {
-          $rootScope.loading = false;
-          var userTitle = JSON.stringify(response.data.userTitle).replace(/\"/g, "");
-          var userMessage = JSON.stringify(response.data.userMessage).replace(/\"/g, "");
-          ErrorService.setError(userTitle, userMessage);
+        if(response.status === 404) {
+          $rootScope.loading = false
+          ErrorService.setError('Not Found', 'There was an error when trying to process your request. Please try again')
         }
-        if(response.status === 500) {
-          $rootScope.loading = false;
-          var userTitle = JSON.stringify(response.data.userTitle).replace(/\"/g, "");
-          var userMessage = JSON.stringify(response.data.userMessage).replace(/\"/g, "");
-          ErrorService.setError(userTitle, userMessage);
-        }
-        return $q.reject(response);
+        return $q.reject(response)
       }
-    };
+    }
   }
 
-  httpProviderConfig.$inject = ['$httpProvider'];
+  httpProviderConfig.$inject = ['$httpProvider']
   function httpProviderConfig($httpProvider){
-    $httpProvider.interceptors.push('responseInterceptor');
+    $httpProvider.interceptors.push('responseInterceptor')
   }
-})();
+})()

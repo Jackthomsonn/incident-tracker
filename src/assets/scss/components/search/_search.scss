@@ -1,0 +1,66 @@
+@mixin search {
+  .search {
+    @include flex(row, center, center);
+    transform: translateY(-55vh);
+    z-index: 100;
+    width: $base-width - 20vw;
+    @include respond-to(small) {
+      width: $base-width;
+      transform: translateY(-32vh);
+    };
+    &_inner {
+      position: relative;
+      @include flex(column, center, center);
+      input {
+        border: none;
+        padding: 1.2em;
+        border-radius: 3px;
+        outline: none;
+        width: 40em;
+        z-index: 100;
+        position: relative;
+        box-shadow: $box-shadow;
+        @include respond-to(small) {
+          width: 30em;
+        }
+      }
+      .material-icons {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 40px;
+        transform: translateX(-70px);
+        z-index: 100;
+        background: #FFF;
+        color: darken($primary-color, 30%);
+        cursor: pointer;
+        font-size: 1.2em;
+        box-shadow: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      button {
+        background: $accent-color;
+        border: none;
+        padding: 1.2em;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        color: darken($accent-color, 15%);
+        cursor: pointer;
+        position: absolute;
+        z-index: 100;
+        right: 0;
+        top: 0;
+        outline: none;
+        &:disabled {
+          background: darken($primary-color, 5%);
+          color: darken($primary-color, 30%);
+        }
+        &:not(:disabled):hover {
+          background: darken($accent-color, 1%);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@mixin aside {
+  aside {
+    background: $primary-color;
+    z-index: 100;
+    width: $base-width - 80vw;
+    height: 100vh;
+    position: absolute;
+    box-shadow: $box-shadow;
+    margin: 0 auto;
+    right: 0;
+    top: 0;
+    @include respond-to(small) {
+      bottom: 0;
+      width: $base-width;
+      height: 30vh;
+      bottom: 0;
+      top: auto;
+      overflow: scroll;
+    }
+    .center {
+      height: 100vh;
+      @include flex(row, center, center);
+      @include respond-to(small) {
+        height: 30vh;
+      };
+    }
+    span {
+      @include flex(column, center, center);
+    }
+    h4 {
+      padding: .85em;
+      &:not(:first-of-type) {
+        border-top: 1px solid darken($primary-color, 5%);
+      }
+    }
+    h3, p, i {
+      color: darken($primary-color, 30%);
+    }
+    p {
+      font-size: .75em;
+    }
+    .material-icons {
+      font-size: 5em;
+    }
+    .accidents {
+      background: $accent-color;
+      color: darken($accent-color, 10%);
+      width: 4em;
+      line-height: 2em;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      height: 3em;
+      display: flex;
+    }
+  }
+}

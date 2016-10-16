@@ -3,7 +3,6 @@
 (function() {
   angular
     .module('app.services', [
-      'app.errorService',
-      'app.infoService'
+      'app.errorService'
     ])
 })()

@@ -1,0 +1,14 @@
+@mixin header {
+  header {
+    background: $primary-color;
+    width: $base-width - 20vw;
+    padding: 1em;
+    height: $header-height;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+    @include flex(row, space-around, center);
+    @include respond-to(small) {
+      width: $base-width;
+    }
+  }
+}

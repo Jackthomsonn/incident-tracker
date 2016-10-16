@@ -1,0 +1,46 @@
+@mixin error {
+  .error {
+    position: absolute;
+    height: 91.5vh;
+    width: $base-width - 20vw;
+    left: 0;
+    right: 0;
+    @include flex(column, center, center);
+    @include respond-to(small) {
+      width: 100vw;
+      height: 60vh;
+    }
+    &_inner {
+      background: $primary-color;
+      z-index: 100;
+      width: 350px;
+      border-radius: 3px;
+      box-shadow: $box-shadow;
+      @include flex(column, space-around, space-around);
+      h4, p {
+        padding: .8em;
+      }
+      h4 {
+        border-bottom: 1px solid darken($primary-color, 2%);
+      }
+      p {
+        font-size: .8em;
+        line-height: 1.4em;
+        color: darken($primary-color, 30%);
+        text-transform: none;
+      }
+      button {
+        background: $accent-color;
+        border: none;
+        padding: .7em;
+        width: 5em;
+        margin: 1em;
+        border-radius: 3px;
+        color: darken($accent-color, 15%);
+        cursor: pointer;
+        z-index: 100;
+        outline: none;
+      }
+    }
+  }
+}

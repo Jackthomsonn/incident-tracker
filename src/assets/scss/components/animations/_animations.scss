@@ -1,0 +1,29 @@
+@mixin animations {
+  .fade.ng-enter {
+    transform: translateY(20px);
+    opacity: 0;
+    @include easing()
+  }
+
+  .fade.ng-enter.ng-enter-active {
+    opacity:1;
+    transform: translateY(0);
+  }
+
+  .bounce-in {
+    animation: bounce-in 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550) forwards;
+    transform: translateY(100vh);
+  }
+
+  @keyframes loader {
+    to {
+      transform: translateX(100%);
+    }
+  }
+}
+
+@keyframes bounce-in {
+  to {
+    transform: translateY(0);
+  }
+}

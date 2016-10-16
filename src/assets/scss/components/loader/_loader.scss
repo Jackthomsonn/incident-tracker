@@ -1,0 +1,13 @@
+@mixin loader {
+  .loader {
+    background: $accent-color;
+    width: 100vw;
+    height: 5px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    transform: translateX(-100vw);
+    animation: loader 1s ease-in-out infinite forwards;
+  }
+}

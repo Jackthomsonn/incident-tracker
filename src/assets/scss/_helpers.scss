@@ -1,0 +1,18 @@
+@mixin flex($flow, $justify, $align) {
+  display: flex;
+  flex-flow: $flow;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin easing() {
+  transition: .8s cubic-bezier(0.680, -0.550, 0.265, 1.550) all;
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (min-width: $small) and (max-width: $medium) {
+      @content;
+    }
+  }
+}

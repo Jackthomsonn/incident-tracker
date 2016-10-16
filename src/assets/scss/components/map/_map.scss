@@ -1,0 +1,12 @@
+@mixin map {
+  .map {
+    height: 100vh;
+    filter: blur(20px);
+    width: $base-width - 20vw;
+    overflow: hidden;
+    @include respond-to(small) {
+      width: $base-width;
+      height: 65vh;
+    };
+  }
+}
